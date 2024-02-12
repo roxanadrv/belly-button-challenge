@@ -73,6 +73,43 @@ function init(data) {
 
   // Render the Bubble Chart using Plotly
   Plotly.newPlot('bubble', bubbleData);
+  
+  
+  // Gauge Chart for Weekly Washing Frequency
+  let gaugeData = [{
+    type: "indicator",
+    mode: "gauge+number",
+    value: selectedMetadata.wfreq,
+    title: { text: "Belly Button Washing Frequency<br>Scrubs per Week" },
+    gauge: {
+      axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
+      bar: { color: "red" }, // Needle color
+      bgcolor: "white",
+      borderwidth: 2,
+      bordercolor: "gray",
+      steps: [
+        { range: [0, 1], color: 'rgba(248, 243, 236, 1)' },
+        { range: [1, 2], color: 'rgba(244, 241, 229, 1)' },
+        { range: [2, 3], color: 'rgba(233, 230, 202, 1)' },
+        { range: [3, 4], color: 'rgba(229, 231, 179, 1)' },
+        { range: [4, 5], color: 'rgba(213, 228, 157, 1)' },
+        { range: [5, 6], color: 'rgba(183, 204, 146, 1)' },
+        { range: [6, 7], color: 'rgba(140, 191, 136, 1)' },
+        { range: [7, 8], color: 'rgba(138, 187, 143, 1)' },
+        { range: [8, 9], color: 'rgba(133, 180, 138, 1)' },
+      ],
+    }
+  }];
+  
+  let gaugeLayout = {
+    width: 600,
+    height: 500,
+    margin: { t: 0, r: 0, l: 0, b: 0 },
+    paper_bgcolor: "white",
+    font: { color: "black", family: "Arial" }
+  };
+  
+  Plotly.newPlot('gauge', gaugeData, gaugeLayout);
 
   // Metadata
   var metadataPanel = d3.select("#sample-metadata");
