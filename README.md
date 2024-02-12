@@ -4,7 +4,7 @@
 This project presents an interactive dashboard to explore the Belly Button Biodiversity dataset, which catalogs the microbes that colonize human navels. The dashboard visualizes the microbial species (also known as operational taxonomic units, or OTUs) found in individual samples. Users can select a sample from the dropdown menu to display the top 10 OTUs found in that individual, represented in both bar chart and bubble chart formats. Additionally, demographic information about the sample is displayed.
 
 ## Repository Structure
-belly-button-challenge/
+```belly-button-challenge/
 │
 ├── static/
 │ └── js/
@@ -14,6 +14,7 @@ belly-button-challenge/
 ├── index.html - The HTML document for the dashboard
 ├── README.md - This documentation file
 └── sample.js - Sample dataset (Note: The project uses an external dataset from a provided link, not this file)
+```
 
 ## How to Run
 1. Clone this repository to your local machine.
